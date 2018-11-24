@@ -5,17 +5,17 @@ public class TestGame {
 		
 		List<Integer>cardNumber = new ArrayList<>();
 		
-		Pokemon pokemon011 = new Pokemon("Charmander"	,50	, 1, 24 , 0, "red"	 	 , "Attacking", "Flamethrower"		 , "Active");	
-		Pokemon pokemon012 = new Pokemon("Charmeleon"	,100, 2, 48 , 0, "red"	 	 , "Attacking", "Fire Wheel"		 , "Active");
-		Pokemon pokemon013 = new Pokemon("Charizard"	,200, 3, 96 , 0, "red"	 	 , "Attacking", "Fire Blast"		 , "Active");
-		Pokemon pokemon021 = new Pokemon("Torchic"		,74	, 1, 35 , 0, "red"	 	 , "Attacking", "Ember"				 , "Active");
-		Pokemon pokemon022 = new Pokemon("Combusken"	,148, 2, 70 , 0, "red"	 	 , "Attacking", "Flame Charge"		 , "Active");
-		Pokemon pokemon023 = new Pokemon("Blaziken"		,296, 3, 140, 0, "red"	 	 , "Attacking", "Blaze Kick"		 , "Active");
-		Pokemon pokemon031 = new Pokemon("Kyogre"		,50	, 1, 40 , 0, "blue"	 	 , "Attacking", "Judgement Storm"	 , "Active");
-		Pokemon pokemon032 = new Pokemon("Primal Kyogre",100, 2, 80 , 0, "blue"	 	 , "Attacking", "Wind Walker Remorse", "Active");		
-		Pokemon pokemon041 = new Pokemon("Pichu"		,56	, 1, 37 , 0, "yellow"	 , "Attacking", "Sparks"			 , "Active");		
-		Pokemon pokemon042 = new Pokemon("Pikachu"		,112, 2, 74 , 0, "yellow"	 , "Attacking", "Lighthing Ball"	 , "Active");		
-		Pokemon pokemon043 = new Pokemon("Raichu"		,224, 3, 148, 0, "yellow"	 , "Attacking", "Ray Bolt"			 , "Active");
+		Pokemon pokemon011 = new Attacking("Charmander"		,50	, 1, 24 , 0, "red"	 	 , "Attacking", "Flamethrower"		 , "Active", 3 );	
+		Pokemon pokemon012 = new Attacking("Charmeleon"		,100, 2, 48 , 0, "red"	 	 , "Attacking", "Fire Wheel"		 , "Active", 6 );
+		Pokemon pokemon013 = new Attacking("Charizard"		,200, 3, 96 , 0, "red"	 	 , "Attacking", "Fire Blast"		 , "Active", 12);
+		Pokemon pokemon021 = new Attacking("Torchic"		,74	, 1, 35 , 0, "red"	 	 , "Attacking", "Ember"				 , "Active", 2 );
+		Pokemon pokemon022 = new Attacking("Combusken"		,148, 2, 70 , 0, "red"	 	 , "Attacking", "Flame Charge"		 , "Active", 4 );
+		Pokemon pokemon023 = new Attacking("Blaziken"		,296, 3, 140, 0, "red"	 	 , "Attacking", "Blaze Kick"		 , "Active", 8 );
+		Pokemon pokemon031 = new Attacking("Kyogre"			,50	, 1, 40 , 0, "blue"	 	 , "Attacking", "Judgement Storm"	 , "Active", 4 );
+		Pokemon pokemon032 = new Attacking("Primal Kyogre"	,100, 2, 80 , 0, "blue"	 	 , "Attacking", "Wind Walker Remorse", "Active", 8 );		
+		Pokemon pokemon041 = new Attacking("Pichu"			,56	, 1, 37 , 0, "yellow"	 , "Attacking", "Sparks"			 , "Active", 4 );		
+		Pokemon pokemon042 = new Attacking("Pikachu"		,112, 2, 74 , 0, "yellow"	 , "Attacking", "Lighthing Ball"	 , "Active", 8 );		
+		Pokemon pokemon043 = new Attacking("Raichu"			,224, 3, 148, 0, "yellow"	 , "Attacking", "Ray Bolt"			 , "Active", 16);
 		
 		Pokemon pokemon051 = new Pokemon("Squirtle"		,30	, 1, 21 , 0, "blue"	 	 , "Defending", "Defense Curl"		 , "Active");
 		Pokemon pokemon052 = new Pokemon("Wartortle"	,120, 2, 42 , 0, "blue"	 	 , "Defending", "Iron Defense"		 , "Active");
