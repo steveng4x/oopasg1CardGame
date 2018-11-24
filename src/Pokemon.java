@@ -30,18 +30,20 @@ public class Pokemon extends Board{
 		setStage(35);
 		setExp(0);
 		setElement("red");
+		setType("Attacking");
 		setMoves("Fireblast");
 		setStatus("Active");		
 	}
 	
 	public Pokemon(String name,int hp, int stage,int energy,
-			int exp, String element, int type,String moves,String status) {
+			int exp, String element, String type,String moves,String status) {
 		setName(name);
 		setHp(hp);
 		setStage(stage);
 		setStage(energy);
 		setExp(exp);
 		setElement(element);
+		setType(type);
 		setMoves(moves);
 		setStatus(status);		
 	}
