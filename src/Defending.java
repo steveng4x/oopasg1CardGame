@@ -3,7 +3,7 @@ public class Defending extends Pokemon{
 	private int resistancePoints;
 
 	public Defending(int resistancePoints) {
-		this.resistancePoints = resistancePoints;
+		setResistancePoints(resistancePoints);
 	}
 
 	@Override
