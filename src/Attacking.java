@@ -8,9 +8,9 @@ public class Attacking extends Pokemon{
 		setAttackingPoints(1);
 	}
 	
-	public Attacking(String name,int hp, int stage,int energy,
-			int exp, String element, String type,String moves,
-			String status,int attackingPoints) {
+	public Attacking(String name, int hp, int stage, int energy,
+			int exp, String element, String type, String moves,
+			String status, int attackingPoints) {
 		setName(name);
 		setHp(hp);
 		setStage(stage);
