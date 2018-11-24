@@ -45,7 +45,9 @@ public class TestGame {
 		for( Pokemon a: cardNumber) {
 			i += 1;
 			System.out.printf("%d. %s\n", i, a);
-		}System.out.println("===================================");
+			System.out.println("===================================");
+		}
+		
 		
 	
 	}

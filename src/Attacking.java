@@ -41,7 +41,7 @@ public class Attacking extends Pokemon{
 				+ getStage() + ", Energy = " + getEnergy() + ", Exp = "
 				+ getExp() + ", Element = " + getElement() + ", Type = "
 				+ getType() + ", Moves = " + getMoves() + ", Status = "
-				+ getStatus() + ", Attack =" + getAttackingPoints();
+				+ getStatus() + ", Attack = " + getAttackingPoints();
 	}
 
 	//toString
