@@ -6,7 +6,7 @@ public class Pokemon extends Board{
 	private int stage;
 	private int energy;
 	private int exp;
-	private int element;
+	private String element;
 	private String type;
 	private String moves;
 	private String status;
@@ -23,8 +23,19 @@ public class Pokemon extends Board{
 	 * @param moves
 	 * @param status
 	 */
+	public Pokemon() {
+		setName("Torchic");
+		setHp(72);
+		setStage(1);
+		setStage(35);
+		setExp(0);
+		setElement("red");
+		setMoves("Fireblast");
+		setStatus("Active");		
+	}
+	
 	public Pokemon(String name,int hp, int stage,int energy,
-			int exp, int element, int type,String moves,String status) {
+			int exp, String element, int type,String moves,String status) {
 		setName(name);
 		setHp(hp);
 		setStage(stage);
@@ -79,11 +90,11 @@ public class Pokemon extends Board{
 		this.exp = exp;
 	}
 
-	public int getElement() {
+	public String getElement() {
 		return element;
 	}
 
-	public void setElement(int element) {
+	public void setElement(String element) {
 		this.element = element;
 	}
 
