@@ -1,9 +1,8 @@
 
-public class Defending {
+public class Defending extends Pokemon{
 	private int resistancePoints;
 
 	public Defending(int resistancePoints) {
-		super();
 		this.resistancePoints = resistancePoints;
 	}
 

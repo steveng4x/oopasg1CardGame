@@ -1,28 +1,57 @@
 
-public class Pokemon {
+public class Pokemon extends Board{
 	
 	private String name;
 	private int hp;
 	private int stage;
 	private int energy;
 	private int exp;
-	private int element;
+	private String element;
 	private String type;
 	private String moves;
 	private String status;
 	
-	public Pokemon(String name,int hp, int stage,int energy,
-			int exp, int element, int type,String moves,String status) {
-		this.name=name;
-		this.hp=hp;
-		this.stage=stage;
-		this.energy=energy;
-		this.exp=exp;
-		this.element=element;
-		this.moves=moves;
-		this.status=status;		
+	//Constructor
+	/**
+	 * @param name
+	 * @param hp
+	 * @param stage
+	 * @param energy
+	 * @param exp
+	 * @param element
+	 * @param type
+	 * @param moves
+	 * @param status
+	 */
+	public Pokemon() {
+		setName("Torchic");
+		setHp(72);
+		setStage(1);
+		setStage(35);
+		setExp(0);
+		setElement("red");
+		setType("Attacking");
+		setMoves("Fireblast");
+		setStatus("Active");		
 	}
-
+	
+	public Pokemon(String name,int hp, int stage,int energy,
+			int exp, String element, String type,String moves,String status) {
+		setName(name);
+		setHp(hp);
+		setStage(stage);
+		setStage(energy);
+		setExp(exp);
+		setElement(element);
+		setType(type);
+		setMoves(moves);
+		setStatus(status);		
+	}
+	
+	//Setters//Getters
+	/**
+	 * @return
+	 */
 	public String getName() {
 		return name;
 	}
@@ -63,11 +92,11 @@ public class Pokemon {
 		this.exp = exp;
 	}
 
-	public int getElement() {
+	public String getElement() {
 		return element;
 	}
 
-	public void setElement(int element) {
+	public void setElement(String element) {
 		this.element = element;
 	}
 
@@ -95,11 +124,15 @@ public class Pokemon {
 		this.status = status;
 	}
 
+	//toString
 	@Override
 	public String toString() {
 		return "Pokemon [name=" + name + ", hp=" + hp + ", stage=" + stage + ", energy=" + energy + ", exp=" + exp
 				+ ", element=" + element + ", type=" + type + ", moves=" + moves + ", status=" + status + "]";
 	}
+	
+	//otherMethod
+	
 	
 	
 }

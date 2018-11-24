@@ -1,5 +1,5 @@
 
-public class Turn {
+public class Turn extends Board{
 	private int option;
 
 	public int getOption() {
