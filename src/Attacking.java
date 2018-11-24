@@ -35,11 +35,17 @@ public class Attacking extends Pokemon{
 		this.attackingPoints = attackingPoints;
 	}
 
-	//toString
 	@Override
 	public String toString() {
-		return "Attacking [attackingPoints=" + attackingPoints + "]";
+		return  "Name = " + getName() + ", Hp = " + getHp() + ", Stage = "
+				+ getStage() + ", Energy = " + getEnergy() + ", Exp = "
+				+ getExp() + ", Element = " + getElement() + ", Type = "
+				+ getType() + ", Moves = " + getMoves() + ", Status = "
+				+ getStatus() + ", Attack =" + getAttackingPoints();
 	}
+
+	//toString
+	
 	
 	//otherMethod
 	}

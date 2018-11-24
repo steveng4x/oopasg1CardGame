@@ -1,7 +1,12 @@
 
-public class Turn extends Board{
+public class Turn extends Attacking{
+	
 	private int option;
 
+	//Setters//Getters
+	/**
+	 * @return
+	 */
 	public int getOption() {
 		return option;
 	}
@@ -10,9 +15,9 @@ public class Turn extends Board{
 		this.option = option;
 	}
 	
+	//otherMethod
 	public void attack() {
-		System.out.println("Attack pokemon" + "");
-		
+		System.out.println(getAttackingPoints());
 	}
 	
 	public void weaknessCheck() {
