@@ -81,19 +81,10 @@ public class Turn extends Board{
 		List<String> givenList = Arrays.asList("red","blue","yellow","colourless");
 		 Random rand = new Random();
 		    String randomElement = givenList.get(rand.nextInt(givenList.size()));
-		if (randomElement=="red") {
+		/**if (randomElement==element) {
+			System.out.println(randomElement + "" + "Colour Matched");
 	
-		}
-		if (randomElement=="blue") {
-			
-		}
-		if (randomElement=="yellow") {
-	
-		}
-		if (randomElement=="colourless") {
-			
-		}
-			
+		}**/
 		
 	}
 	
@@ -115,7 +106,9 @@ public class Turn extends Board{
 	}
 	
 	public void evolve() {
-		
+		if (option==4) {
+			
+		}
 	}
 	
 	public void changeCard() {
