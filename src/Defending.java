@@ -22,7 +22,11 @@ public class Defending extends Pokemon{
 	//toString
 	@Override
 	public String toString() {
-		return "Defending [resistancePoints=" + resistancePoints + "]";
+		return  "Name = " + getName() + ", Hp = " + getHp() + ", Stage = "
+				+ getStage() + ", Energy = " + getEnergy() + ", Exp = "
+				+ getExp() + ", Element = " + getElement() + ", Type = "
+				+ getType() + ", Moves = " + getMoves() + ", Status = "
+				+ getStatus() + ", Resist = " + getResistancePoints();
 	}
 
 	//Setters//Getters

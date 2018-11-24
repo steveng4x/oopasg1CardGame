@@ -127,8 +127,11 @@ public class Pokemon extends Board{
 	//toString
 	@Override
 	public String toString() {
-		return "Pokemon [name=" + name + ", hp=" + hp + ", stage=" + stage + ", energy=" + energy + ", exp=" + exp
-				+ ", element=" + element + ", type=" + type + ", moves=" + moves + ", status=" + status + "]";
+		return  "Name = " + getName() + ", Hp = " + getHp() + ", Stage = "
+				+ getStage() + ", Energy = " + getEnergy() + ", Exp = "
+				+ getExp() + ", Element = " + getElement() + ", Type = "
+				+ getType() + ", Moves = " + getMoves() + ", Status = "
+				+ getStatus();
 	}
 	
 	//otherMethod
