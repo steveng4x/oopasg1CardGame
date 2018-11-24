@@ -1,7 +1,39 @@
-
+import java.util.Scanner;
+import java.util.Random;
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Arrays;
 public class Turn extends Board{
+	Scanner keyboard = new Scanner(System.in);
+	
 	private int option;
+	private int choose1;
+	private int choose2;
+	private int choose3;
+	private int chooseatk;
+	private enum Coin{Heads, Tails};
+	
+	Random randomNum = new Random();
+	private int result = randomNum.nextInt(2);
+	private int heads = 0;
+	private int tails = 1;
+	Coin coinFlip;
 
+	
+	
+
+	public void flip(){
+	    if(result == 0){
+	        coinFlip = Coin.Heads;
+	        System.out.println("You flipped Heads!");
+	        
+	    }
+	    else{
+	        coinFlip = Coin.Tails;
+	        System.out.println("You flipped Tails!");
+	    }
+	}
+	
 	public int getOption() {
 		return option;
 	}
@@ -11,24 +43,75 @@ public class Turn extends Board{
 	}
 	
 	public void attack() {
-		System.out.println("Attack pokemon" + "");
+		if (option==1){
+		System.out.println("Choose Pokemon: ");
+		choose1 = keyboard.nextInt();
+		if (choose1>=1 && choose1<=6) {
+		System.out.println("Attack Pokemon: ");
+		chooseatk = keyboard.nextInt();
+		weaknessCheck();
+		flip();
 		
+		}
+		else {
+			System.out.println("Error");
+		}
+		}
 	}
 	
 	public void weaknessCheck() {
 		
+
+
+
+
 	}
 	
 	public void recharge() {
-		
+		if (option==2) {
+			System.out.println("Choose Pokemon: ");
+			choose2 = keyboard.nextInt();
+			if (choose2 >=1 && choose2 <= 6) {
+				System.out.println("Draw card..." );
+				energydrawCheck();
+			}
+			else {
+				System.out.println("Error");
+			}
+		}
 	}
 	
 	public void energydrawCheck() {
+		List<String> givenList = Arrays.asList("red","blue","yellow","colourless");
+		 Random rand = new Random();
+		    String randomElement = givenList.get(rand.nextInt(givenList.size()));
+		if (randomElement=="red") {
+	
+		}
+		if (randomElement=="blue") {
+			
+		}
+		if (randomElement=="yellow") {
+	
+		}
+		if (randomElement=="colourless") {
+			
+		}
+			
 		
 	}
 	
 	public void train() {
-		
+		if (option==3){
+			System.out.println("Choose Pokemon: ");
+			choose3 = keyboard.nextInt();
+			if (choose3>=1 && choose3<=6) {
+				
+			}
+			else {
+				System.out.println("Error");
+			}
+			}
 	}
 	
 	public void expCheck() {
