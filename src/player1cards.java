@@ -1,5 +1,3 @@
-
-
 import java.util.*;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
