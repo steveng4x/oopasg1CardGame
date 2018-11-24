@@ -40,8 +40,6 @@ public class TestGame {
 		Pokemon pokemon121 = new Pokemon("Vulpix"		,55	, 1, 40 , 0, "red"		 , "Fairy"	  , "Fire Spin"			 , "Active");
 		Pokemon pokemon122 = new Pokemon("Ninetales"	,110, 2, 80 , 0, "red"		 , "Fairy"	  , "Fire Trap"			 , "Active");
 		
-		Pokemon pokemon011 = new Attacking(10);
-		
 		
 		
 	
