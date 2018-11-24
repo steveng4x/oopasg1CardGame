@@ -1,4 +1,4 @@
 
-public class Fairy {
+public class Fairy extends Pokemon{
 	
 }

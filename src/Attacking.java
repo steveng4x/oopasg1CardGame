@@ -1,9 +1,9 @@
 
-public class Attacking {
+public class Attacking extends Pokemon{
+	
 	private int attackingPoints;
 
 	public Attacking(int attackingPoints) {
-		super();
 		this.attackingPoints = attackingPoints;
 	}
 

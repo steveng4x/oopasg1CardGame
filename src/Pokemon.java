@@ -1,5 +1,5 @@
 
-public class Pokemon {
+public class Pokemon extends Board{
 	
 	private String name;
 	private int hp;
@@ -11,18 +11,34 @@ public class Pokemon {
 	private String moves;
 	private String status;
 	
+	//Constructor
+	/**
+	 * @param name
+	 * @param hp
+	 * @param stage
+	 * @param energy
+	 * @param exp
+	 * @param element
+	 * @param type
+	 * @param moves
+	 * @param status
+	 */
 	public Pokemon(String name,int hp, int stage,int energy,
 			int exp, int element, int type,String moves,String status) {
-		this.name=name;
-		this.hp=hp;
-		this.stage=stage;
-		this.energy=energy;
-		this.exp=exp;
-		this.element=element;
-		this.moves=moves;
-		this.status=status;		
+		setName(name);
+		setHp(hp);
+		setStage(stage);
+		setStage(energy);
+		setExp(exp);
+		setElement(element);
+		setMoves(moves);
+		setStatus(status);		
 	}
-
+	
+	//Setters//Getters
+	/**
+	 * @return
+	 */
 	public String getName() {
 		return name;
 	}
@@ -95,11 +111,15 @@ public class Pokemon {
 		this.status = status;
 	}
 
+	//toString
 	@Override
 	public String toString() {
 		return "Pokemon [name=" + name + ", hp=" + hp + ", stage=" + stage + ", energy=" + energy + ", exp=" + exp
 				+ ", element=" + element + ", type=" + type + ", moves=" + moves + ", status=" + status + "]";
 	}
+	
+	//otherMethod
+	
 	
 	
 }
