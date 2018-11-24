@@ -7,10 +7,6 @@ public class Turn extends Board{
 	Scanner keyboard = new Scanner(System.in);
 	
 	private int option;
-	private int choose1;
-	private int choose2;
-	private int choose3;
-	private int chooseatk;
 	private enum Coin{Heads, Tails};
 	
 	Random randomNum = new Random();
@@ -45,10 +41,10 @@ public class Turn extends Board{
 	public void attack() {
 		if (option==1){
 		System.out.println("Choose Pokemon: ");
-		choose1 = keyboard.nextInt();
+		int choose1 = keyboard.nextInt();
 		if (choose1>=1 && choose1<=6) {
 		System.out.println("Attack Pokemon: ");
-		chooseatk = keyboard.nextInt();
+		int chooseatk = keyboard.nextInt();
 		weaknessCheck();
 		flip();
 		
@@ -70,7 +66,7 @@ public class Turn extends Board{
 	public void recharge() {
 		if (option==2) {
 			System.out.println("Choose Pokemon: ");
-			choose2 = keyboard.nextInt();
+			int choose2 = keyboard.nextInt();
 			if (choose2 >=1 && choose2 <= 6) {
 				System.out.println("Draw card..." );
 				energydrawCheck();
@@ -104,7 +100,7 @@ public class Turn extends Board{
 	public void train() {
 		if (option==3){
 			System.out.println("Choose Pokemon: ");
-			choose3 = keyboard.nextInt();
+			int choose3 = keyboard.nextInt();
 			if (choose3>=1 && choose3<=6) {
 				
 			}
