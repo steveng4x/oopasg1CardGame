@@ -67,6 +67,7 @@ public class Turn {
 	public void optionAttack(Pokemon atkPoke, Pokemon targetPoke) {
 		int atk = atkPower(atkPoke);
 		if (weaknessCheck(atkPoke, targetPoke)) {
+			System.out.println("Weakness: on, double attack point");
 			
 		}else {
 			
@@ -90,24 +91,26 @@ public class Turn {
 	}
 	
 	private int atkPower(Pokemon poke) {
-		int atk;
+		int atk = 2;
 		if (poke.getType().equals("Attack")) {
-			atk = poke.getAttackingPoints();
-		}else {
-			
+			if (flip()) {
+				atk = poke.getAttackingPoints();
+			}
 		}
+		atk = atk ^ (poke.getStage() - 1);
+		return atk;
 	}
 	
-	public int flip(){
+	public boolean flip(){
 	    if(result == 0){
 	        coinFlip = Coin.Heads;
 	        System.out.println("You flipped Heads!");
-	        return result;
+	        return true;
 	    }
 	    else{
 	        coinFlip = Coin.Tails;
 	        System.out.println("You flipped Tails!");
-	        return result;
+	        return false;
 	    }
 	}
 	
