@@ -65,7 +65,8 @@ public class Pokemon extends Board{
 	}
 
 	public void setHp(int hp) {
-		this.hp = hp;
+			this.hp = hp;
+
 	}
 
 	public int getStage() {
