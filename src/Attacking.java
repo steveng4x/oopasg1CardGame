@@ -4,7 +4,18 @@ public class Attacking extends Pokemon{
 	private int attackingPoints;
 	
 	//Constructors
-	public Attacking() {
+	public Attacking(String name, int hp, int stage, int energy,
+			int exp, String element, String type, String moves,
+			String status) {
+		setName(name);
+		setHp(hp);
+		setStage(stage);
+		setStage(energy);
+		setExp(exp);
+		setElement(element);
+		setType(type);
+		setMoves(moves);
+		setStatus(status);
 		setAttackingPoints(1);
 	}
 	

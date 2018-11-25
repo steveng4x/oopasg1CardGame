@@ -30,7 +30,7 @@ public class Turn {
 	}
 	
 	//otherMethod
-	public void optionSelection(String player) {
+	public void optionSelection(String player, ArrayList<Pokemon> inPlayer, ArrayList<Pokemon> outPlayer) {
 		System.out.println("Player1:\n"
 			+"Option 1: Attack\n"
 			+"Option 2: Recharge\n"
@@ -38,15 +38,17 @@ public class Turn {
 			+"Choose the option: ");
 		int tempSelect = keyboard.nextInt();
 		System.out.print("\nChoose Pokemon: ");
-		int tempPoke = keyboard.nextInt();
-		if (tempPoke >= 1 && tempPoke <= 6) {
+		int movPoke = keyboard.nextInt();
+		if (movPoke >= 1 && movPoke <= 6) {
 			if (tempSelect >= 1 && tempSelect <= 3) {
 				switch(tempSelect) {
 				case 1:
 					System.out.print("Attack Pokemon: ");
-					int targetPoke = keyboard.nextInt(); 
-					optionAttack(tempPoke ,targetPoke);
-					
+					int targetPoke = keyboard.nextInt();
+					Pokemon x = inPlayer.get(movPoke);
+					Pokemon y = outPlayer.get(targetPoke);
+					optionAttack(x, y);
+
 				case 2:
 					optionRecharge();
 					
@@ -62,8 +64,13 @@ public class Turn {
 		}
 	}
 	
-	public void optionAttack(int atkPoke, int targetPoke) {
-		
+	public void optionAttack(Pokemon atkPoke, Pokemon targetPoke) {
+		int atk = atkPower(atkPoke);
+		if (weaknessCheck(atkPoke, targetPoke)) {
+			
+		}else {
+			
+		}
 	}
 	
 	public void optionRecharge() {
@@ -74,12 +81,21 @@ public class Turn {
 		
 	}
 	
-	public void weaknessCheck() {
-		
-
-
-
-
+	public boolean weaknessCheck(Pokemon poke1, Pokemon poke2) {
+		if (poke1.getType() == poke2.getType()) {
+			return true;
+		}else {
+			return false;
+		}
+	}
+	
+	private int atkPower(Pokemon poke) {
+		int atk;
+		if (poke.getType().equals("Attack")) {
+			
+		}else {
+			
+		}
 	}
 	
 	public int flip(){
