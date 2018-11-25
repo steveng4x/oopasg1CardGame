@@ -136,7 +136,9 @@ public class Pokemon extends Board{
 	}
 	
 	//otherMethod
-	
+	public void decreaseHp(int hp) {
+		setHp(getHp() - hp);
+	}
 	
 	
 }

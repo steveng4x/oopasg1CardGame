@@ -3,7 +3,9 @@ import java.util.Random;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Arrays;
-public class Turn extends Board{
+public class Turn {
+	
+	
 	Scanner keyboard = new Scanner(System.in);
 	
 	private int option;
@@ -15,10 +17,71 @@ public class Turn extends Board{
 	private int tails = 1;
 	Coin coinFlip;
 	
+	//Setters//Getters
+	/**
+	 * @return
+	 */
+	public int getOption() {
+		return option;
+	}
 
+	public void setOption(int option) {
+		this.option = option;
+	}
 	
+	//otherMethod
+	public void optionSelection(String player) {
+		System.out.println("Player1:\n"
+			+"Option 1: Attack\n"
+			+"Option 2: Recharge\n"
+			+"Option 3: Train\n"
+			+"Choose the option: ");
+		int tempSelect = keyboard.nextInt();
+		System.out.print("\nChoose Pokemon: ");
+		int tempPoke = keyboard.nextInt();
+		if (tempPoke >= 1 && tempPoke <= 6) {
+			if (tempSelect >= 1 && tempSelect <= 3) {
+				switch(tempSelect) {
+				case 1:
+					System.out.print("Attack Pokemon: ");
+					int targetPoke = keyboard.nextInt(); 
+					optionAttack(tempPoke ,targetPoke);
+					
+				case 2:
+					optionRecharge();
+					
+				case 3:
+					optionTrain();
+					
+				}
+			}else {
+				throw new ArithmeticException("Out of Option Range.");
+			}
+		}else {
+			throw new ArithmeticException("Out of Option Range.");
+		}
+	}
 	
+	public void optionAttack(int atkPoke, int targetPoke) {
+		
+	}
+	
+	public void optionRecharge() {
+		
+	}
+	
+	public void optionTrain() {
+		
+	}
+	
+	public void weaknessCheck() {
+		
 
+
+
+
+	}
+	
 	public int flip(){
 	    if(result == 0){
 	        coinFlip = Coin.Heads;
@@ -32,53 +95,6 @@ public class Turn extends Board{
 	    }
 	}
 	
-	public int getOption() {
-		return option;
-	}
-
-	public void setOption(int option) {
-		this.option = option;
-	}
-	
-	public void attack() {
-		if (option==1){
-		System.out.println("Choose Pokemon: ");
-		int choose1 = keyboard.nextInt();
-		if (choose1>=1 && choose1<=6) {
-		System.out.println("Attack Pokemon: ");
-		int chooseatk = keyboard.nextInt();
-		weaknessCheck();
-		flip();
-		
-		}
-		else {
-			System.out.println("Error");
-		}
-		}
-	}
-	
-	public void weaknessCheck() {
-		
-
-
-
-
-	}
-	
-	public void recharge() {
-		if (option==2) {
-			System.out.println("Choose Pokemon: ");
-			int choose2 = keyboard.nextInt();
-			if (choose2 >=1 && choose2 <= 6) {
-				System.out.println("Draw card..." );
-				energydrawCheck();
-			}
-			else {
-				System.out.println("Error");
-			}
-		}
-	}
-	
 	public void energydrawCheck() {
 		List<String> givenList = Arrays.asList("red","blue","yellow","colourless");
 		 Random rand = new Random();
@@ -90,27 +106,8 @@ public class Turn extends Board{
 		
 	}
 	
-	public void train() {
-		if (option==3){
-			System.out.println("Choose Pokemon: ");
-			int choose3 = keyboard.nextInt();
-			if (choose3>=1 && choose3<=6) {
-				
-			}
-			else {
-				System.out.println("Error");
-			}
-			}
-	}
-	
 	public void expCheck() {
 		
-	}
-	
-	public void evolve() {
-		if (option==4) {
-			
-		}
 	}
 	
 	public void changeCard() {

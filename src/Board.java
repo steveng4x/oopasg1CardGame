@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class Board {
+public class Board extends Turn{
 	private int turn;
 	private String playername;
 	
