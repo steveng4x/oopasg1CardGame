@@ -3,12 +3,13 @@ import java.util.List;
 
 public class Board extends Turn{
 	private int turn;
-	private String playername;
-	
+	private String player1name;
+	private String player2name;
 	public void startDraw() {
 		System.out.println("Each player draw 6 card");
 	}
 
+	
 	public void pokeList() {
 		List<Integer>Number = new ArrayList<>();
 		List<String>Type = new ArrayList<>();
@@ -30,14 +31,24 @@ public class Board extends Turn{
 		this.turn = turn;
 	}
 
-	public String getPlayername() {
-		return playername;
+	public String getPlayer1name() {
+		return player1name;
 	}
 
-	public void setPlayername(String playername) {
-		this.playername = playername;
+	public void setPlayer1name(String player1name) {
+		this.player1name = player1name;
 	}
 
+	public String getPlayer2name() {
+		return player2name;
+	}
+
+	public void setPlayer2name(String player2name) {
+		this.player2name = player2name;
+	}
+		
+	}
 	
 	
-}
+	
+
