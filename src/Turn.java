@@ -41,20 +41,20 @@ public class Turn {
 		int movPoke = keyboard.nextInt();
 		if (movPoke >= 1 && movPoke <= 6) {
 			if (tempSelect >= 1 && tempSelect <= 3) {
+				Pokemon x = inPlayer.get(movPoke);
 				switch(tempSelect) {
 				case 1:
 					System.out.print("Attack Pokemon: ");
 					int targetPoke = keyboard.nextInt();
-					Pokemon x = inPlayer.get(movPoke);
 					Pokemon y = outPlayer.get(targetPoke);
 					optionAttack(x, y);
-
+					expCheck(x);
 				case 2:
-					optionRecharge();
+					optionRecharge(x);
 					
 				case 3:
-					optionTrain();
-					
+					optionTrain(x);
+					expCheck(x);
 				}
 			}else {
 				throw new ArithmeticException("Out of Option Range.");
@@ -90,14 +90,13 @@ public class Turn {
 		targetPoke.decreaseHp(dmgTaken);
 		System.out.println("HitPoint for " + targetPoke.getName() + " is Damaged by " + dmgTaken);
 		System.out.println("Energy for " + atkPoke.getName() + " is Reduced by " + energyReduction);
-		expCheck(atkPoke);
 	}
 	
-	public void optionRecharge() {
+	public void optionRecharge(Pokemon Poke) {
 		
 	}
 	
-	public void optionTrain() {
+	public void optionTrain(Pokemon Poke) {
 		
 	}
 	
