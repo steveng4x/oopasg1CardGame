@@ -176,4 +176,19 @@ public class Pokemon extends Board{
 		setHp(getHp() + hp);
 	}
 	
+	public void decreaseEnergy(int egy) {
+		setEnergy(getEnergy() - egy);
+	}
+	
+	public void increaseEnergy(int egy) {
+		setEnergy(getEnergy() + egy);
+	}
+	
+	public void increaseExp(int exp) {
+		setExp(getExp() + exp);
+	}
+	
+	public void resetExp() {
+		setExp(0);
+	}
 }
