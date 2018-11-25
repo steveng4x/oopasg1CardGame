@@ -65,13 +65,32 @@ public class Turn {
 	}
 	
 	public void optionAttack(Pokemon atkPoke, Pokemon targetPoke) {
+		int energyReduction;
 		int atk = atkPower(atkPoke);
 		if (weaknessCheck(atkPoke, targetPoke)) {
-			System.out.println("Weakness: on, double attack point");
-			
-		}else {
-			
+			System.out.println("[Weakness: On, Double AttackPower]");
+			atk = atk * 2;
+			energyReduction = 2;
+		} else {
+			energyReduction = 1;
+		}atkPoke.increaseExp(1);
+		int def = defPower(targetPoke);
+		if (atkPoke.getType().equals("Fairy")) {
+			System.out.println("[Unique Skill Triggered]");
+			if (flip()) {
+				System.out.println("[Flip a Coin: Head( *Paralyze* )]");
+				paralyze(targetPoke);
+			}else {
+				System.out.println("[Flip a Coin: Tail( *Poison* )]");
+				poison(targetPoke);
+			}
 		}
+		atkPoke.decreaseEnergy(energyReduction);
+		int dmgTaken = atk - def;
+		targetPoke.decreaseHp(dmgTaken);
+		System.out.println("HitPoint for " + targetPoke.getName() + " is Damaged by " + dmgTaken);
+		System.out.println("Energy for " + atkPoke.getName() + " is Reduced by " + energyReduction);
+		expCheck(atkPoke);
 	}
 	
 	public void optionRecharge() {
@@ -90,26 +109,52 @@ public class Turn {
 		}
 	}
 	
+	private int defPower(Pokemon poke) {
+		int def = 0;
+		if (poke.getType().equals("Defending")) {
+			if (flip()) {
+				System.out.print("[Flip a Coin: Head( Defend Success!!! )] ");
+				def = poke.getResistancePoints();
+			} else {
+				System.out.print("[Flip a Coin: Tail( Defend Fail... )] ");
+			}
+		}
+		System.out.println("ResistPoint = " + def);
+		return def;
+	}
+	
 	private int atkPower(Pokemon poke) {
 		int atk = 2;
 		if (poke.getType().equals("Attack")) {
 			if (flip()) {
+				System.out.print("[Flip a Coin: Head( Attack Success!!! )] ");
 				atk = poke.getAttackingPoints();
+			} else {
+				System.out.print("[Flip a Coin: Tail( Attack Fail... )]");
+				atk = atk ^ (poke.getStage() - 1);
 			}
+		} else {
+			atk = atk ^ (poke.getStage() - 1);
 		}
-		atk = atk ^ (poke.getStage() - 1);
+		System.out.println("AttackPower = " + atk);
 		return atk;
+	}
+	
+	private void paralyze(Pokemon poke) {
+		
+	}
+	
+	private void poison(Pokemon poke) {
+		
 	}
 	
 	public boolean flip(){
 	    if(result == 0){
 	        coinFlip = Coin.Heads;
-	        System.out.println("You flipped Heads!");
 	        return true;
 	    }
 	    else{
 	        coinFlip = Coin.Tails;
-	        System.out.println("You flipped Tails!");
 	        return false;
 	    }
 	}
@@ -125,12 +170,20 @@ public class Turn {
 		
 	}
 	
-	public void expCheck() {
-		
+	public void expCheck(Pokemon poke) {
+		if (poke.getExp() >= 20) {
+			poke.resetExp();
+			poke.evolve();
+		}
 	}
 	
 	public void changeCard() {
 		
 	}
+	
+	public void statusCheck() {
+		
+	}
+	
 	
 }

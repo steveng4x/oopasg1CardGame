@@ -191,4 +191,8 @@ public class Pokemon extends Board{
 	public void resetExp() {
 		setExp(0);
 	}
+	
+	public void evolve() {
+		
+	}
 }
