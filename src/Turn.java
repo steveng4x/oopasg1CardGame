@@ -14,19 +14,21 @@ public class Turn extends Board{
 	private int heads = 0;
 	private int tails = 1;
 	Coin coinFlip;
+	
 
 	
 	
 
-	public void flip(){
+	public int flip(){
 	    if(result == 0){
 	        coinFlip = Coin.Heads;
 	        System.out.println("You flipped Heads!");
-	        
+	        return result;
 	    }
 	    else{
 	        coinFlip = Coin.Tails;
 	        System.out.println("You flipped Tails!");
+	        return result;
 	    }
 	}
 	
