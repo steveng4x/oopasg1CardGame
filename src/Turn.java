@@ -92,7 +92,7 @@ public class Turn {
 	private int atkPower(Pokemon poke) {
 		int atk;
 		if (poke.getType().equals("Attack")) {
-			
+			atk = poke.getAttackingPoints();
 		}else {
 			
 		}

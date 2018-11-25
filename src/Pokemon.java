@@ -10,6 +10,8 @@ public class Pokemon extends Board{
 	private String type;
 	private String moves;
 	private String status;
+	private int attackingPoints;
+	private int resistancePoints;
 	
 	//Constructor
 	/**
@@ -22,18 +24,29 @@ public class Pokemon extends Board{
 	 * @param type
 	 * @param moves
 	 * @param status
+	 * @param attackingPoints
+	 * @param resistancePoints
 	 */
-	public Pokemon() {
-		setName("Torchic");
-		setHp(72);
-		setStage(1);
-		setStage(35);
-		setExp(0);
-		setElement("red");
-		setType("Attacking");
-		setMoves("Fireblast");
-		setStatus("Active");		
-	}
+	public Pokemon(String name, int hp, int stage, int energy,
+			int exp, String element, String type, String moves,
+			String status, int atkordef) {
+		setName(name);
+		setHp(hp);
+		setStage(stage);
+		setStage(energy);
+		setExp(exp);
+		setElement(element);
+		setType(type);
+		setMoves(moves);
+		setStatus(status);
+		if (type.equals("Attacking")) {
+			setAttackingPoints(atkordef);
+			setResistancePoints(0);
+		}else if (type.equals("Defending")){
+			setAttackingPoints(1);
+			setResistancePoints(atkordef);
+		}
+	}//Attacking/Defending
 	
 	public Pokemon(String name,int hp, int stage,int energy,
 			int exp, String element, String type,String moves,String status) {
@@ -45,8 +58,10 @@ public class Pokemon extends Board{
 		setElement(element);
 		setType(type);
 		setMoves(moves);
-		setStatus(status);		
-	}
+		setStatus(status);	
+		setAttackingPoints(1);
+		setResistancePoints(0);
+	}//Fairy
 	
 	//Setters//Getters
 	/**
@@ -124,6 +139,22 @@ public class Pokemon extends Board{
 	public void setStatus(String status) {
 		this.status = status;
 	}
+	
+	public int getAttackingPoints() {
+		return attackingPoints;
+	}
+
+	public void setAttackingPoints(int attackingPoints) {
+		this.attackingPoints = attackingPoints;
+	}
+	
+	public int getResistancePoints() {
+		return resistancePoints;
+	}
+
+	public void setResistancePoints(int resistancePoints) {
+		this.resistancePoints = resistancePoints;
+	}
 
 	//toString
 	@Override
@@ -132,7 +163,8 @@ public class Pokemon extends Board{
 				+ getStage() + ", Energy = " + getEnergy() + ", Exp = "
 				+ getExp() + ", Element = " + getElement() + ", Type = "
 				+ getType() + ", Moves = " + getMoves() + ", Status = "
-				+ getStatus();
+				+ getStatus() + ", Attack = " + getAttackingPoints()
+				+ ", Resist = " + getResistancePoints();
 	}
 	
 	//otherMethod
