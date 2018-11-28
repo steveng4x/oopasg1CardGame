@@ -1,14 +1,21 @@
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-
+import java.util.Random;
 public class TestGame {
 	public static void main(String[] args) {
 		
 		Scanner keyboard = new Scanner(System.in);
 		List<Pokemon>cardNumber = new ArrayList<Pokemon>();
-		
+		ArrayList<Pokemon>stage1 = new ArrayList<Pokemon>();
+		ArrayList<Pokemon>stage2 = new ArrayList<Pokemon>();
+		ArrayList<Pokemon>stage3 = new ArrayList<Pokemon>();
+		ArrayList<Pokemon>p1 = new ArrayList<Pokemon>();
+		ArrayList<Pokemon>p2 = new ArrayList<Pokemon>();
 		Board obj = new Board();
+		
+		Random rand = new Random();
+		int n = rand.nextInt(12);
 		
 		System.out.println("Please enter your name as player 1");
 		String player1name = keyboard.nextLine();
@@ -52,6 +59,57 @@ public class TestGame {
 		Pokemon pokemon112 = new Pokemon("Kricketune"	,108, 2, 84 , 0, "red"		 , "Fairy"	  , "Musical Performance", "Active");	cardNumber.add(pokemon112);
 		Pokemon pokemon121 = new Pokemon("Vulpix"		,55	, 1, 40 , 0, "red"		 , "Fairy"	  , "Fire Spin"			 , "Active");	cardNumber.add(pokemon121);
 		Pokemon pokemon122 = new Pokemon("Ninetales"	,110, 2, 80 , 0, "red"		 , "Fairy"	  , "Fire Trap"			 , "Active");	cardNumber.add(pokemon122);
+		
+		stage1.add(pokemon011);
+		stage1.add(pokemon021);
+		stage1.add(pokemon031);
+		stage1.add(pokemon041);
+		stage1.add(pokemon051);
+		stage1.add(pokemon061);
+		stage1.add(pokemon071);
+		stage1.add(pokemon081);
+		stage1.add(pokemon091);
+		stage1.add(pokemon101);
+		stage1.add(pokemon111);
+		stage1.add(pokemon121);
+		
+		stage2.add(pokemon012);
+		stage2.add(pokemon022);
+		stage2.add(pokemon032);
+		stage2.add(pokemon042);
+		stage2.add(pokemon052);
+		stage2.add(pokemon062);
+		stage2.add(pokemon072);
+		stage2.add(pokemon082);
+		stage2.add(pokemon092);
+		stage2.add(pokemon102);
+		stage2.add(pokemon112);
+		stage2.add(pokemon122);
+		
+		stage3.add(pokemon013);
+		stage3.add(pokemon023);
+		stage3.add(null);
+		stage3.add(pokemon043);
+		stage3.add(pokemon053);
+		stage3.add(null);
+		stage3.add(pokemon073);
+		stage3.add(pokemon083);
+		stage3.add(pokemon093);
+		stage3.add(pokemon103);
+		stage3.add(null);
+		stage3.add(null);
+		
+		for( int i = 0; i <=6; i++){
+			p1.add(stage1.get(n));
+			
+		}
+		
+		for( int i = 0; i <=6; i++){
+			p2.add(stage1.get(n));
+			
+		}
+		
+		
 		
 //		for ( Pokemon a: cardNumber ) {
 //			System.out.println("=====================");

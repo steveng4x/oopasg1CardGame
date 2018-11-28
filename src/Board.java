@@ -7,6 +7,7 @@ public class Board extends Turn{
 	private String player2name;
 	public void startDraw() {
 		System.out.println("Each player draw 6 card");
+		
 	}
 
 	
