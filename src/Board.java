@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Board extends Turn{
-	private int turn;
+	private long turn;
 	private String player1name;
 	private String player2name;
 	public void startDraw() {
@@ -14,11 +14,11 @@ public class Board extends Turn{
 
 	}
 	
-	public int getTurn() {
+	public long getTurn() {
 		return turn;
 	}
 
-	public void setTurn(int turn) {
+	public void setTurn(long turn) {
 		this.turn = turn;
 	}
 
@@ -38,8 +38,12 @@ public class Board extends Turn{
 		this.player2name = player2name;
 	}
 		
+	public long countTurn(long  t) {
+		turn = turn + t;
+		return turn;
+	}
 	}
 	
-	
+
 	
 
