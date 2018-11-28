@@ -13,9 +13,6 @@ public class Turn {
 	Coin coinFlip;
 	
 	//Setters//Getters
-	/**
-	 * @return
-	 */
 	public int getOption() {
 		return option;
 	}
@@ -57,7 +54,6 @@ public class Turn {
 						Pokemon y = outPlayer.get(targetPoke - 1);
 						optionAttack(x, y);
 					}else {
-						keyboard.close();
 						throw new ArithmeticException("Out of Option Range.");
 					}
 					break;
@@ -70,14 +66,11 @@ public class Turn {
 				}
 				expCheck(x);
 			}else {
-				keyboard.close();
 				throw new ArithmeticException("Out of Option Range.");	
 			}
 		}else {
-			keyboard.close();
 			throw new ArithmeticException("Out of Option Range.");
 		}
-		keyboard.close();
 		deadPokeCheck(outPlayer);
 		checkState(inPlayer);
 		ArrayList<ArrayList<Pokemon>> battleResult = new ArrayList<ArrayList<Pokemon>>();
@@ -233,10 +226,4 @@ public class Turn {
 			}
 		}
 	}
-	
-//	public void changeCard() {
-//		
-//	}
-	
-	
 }

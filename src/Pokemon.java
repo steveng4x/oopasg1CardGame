@@ -15,19 +15,6 @@ public class Pokemon extends Board{
 	private int staticTimer;
 	
 	//Constructor
-	/**
-	 * @param name
-	 * @param hp
-	 * @param stage
-	 * @param energy
-	 * @param exp
-	 * @param element
-	 * @param type
-	 * @param moves
-	 * @param status
-	 * @param attackingPoints
-	 * @param resistancePoints
-	 */
 	public Pokemon(String name, int hp, int stage, int energy,
 			int exp, String element, String type, String moves,
 			String status, int atkordef) {
@@ -67,9 +54,6 @@ public class Pokemon extends Board{
 	}//Fairy
 	
 	//Setters//Getters
-	/**
-	 * @return
-	 */
 	public String getName() {
 		return name;
 	}

@@ -10,6 +10,7 @@ public class testGame {
 		ArrayList<Pokemon>p1Poke = new ArrayList<Pokemon>();
 		ArrayList<Pokemon>p2Poke = new ArrayList<Pokemon>();
 		ArrayList<Board>player = new ArrayList<Board>();
+        HighScore hm = new HighScore();
 		
 		//Identity
 		System.out.println("Player 1 Name: ");
@@ -44,6 +45,7 @@ public class testGame {
 				if (p2Poke.size() <= 3) {
 					Board.setWin(true);
 					System.out.print(player1name + " Win!!!");
+			        hm.addScore(player1name,p1.getTurn());
 					break;
 				}
 				tempPokelist = Turn.selectionOption(player2name, p2Poke, p1Poke);
@@ -55,11 +57,13 @@ public class testGame {
 				if (p1Poke.size() <= 3) {
 					Board.setWin(true);
 					System.out.print(player2name + " Win!!!");
+			        hm.addScore(player2name,p2.getTurn());
 					break;
 				}
 			}
 			break;
 		case 2://ScoreBoard
+	        System.out.print(hm.getHighscoreString());
 			break;
 		}
 		keyboard.close();

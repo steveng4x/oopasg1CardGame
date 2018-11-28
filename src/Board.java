@@ -4,7 +4,7 @@ import java.util.Random;
 public class Board extends Turn{
 	
 	private static boolean win;
-	private long turn;
+	private int turn;
 	private String playername;
 	private static ArrayList<Integer>appendList = new ArrayList<Integer>();
 	
@@ -20,11 +20,11 @@ public class Board extends Turn{
 	}
 	
 	//Setters//Getters
-	public long getTurn() {
+	public int getTurn() {
 		return turn;
 	}
 
-	public void setTurn(long turn) {
+	public void setTurn(int turn) {
 		this.turn = turn;
 	}
 
@@ -134,7 +134,7 @@ public class Board extends Turn{
 			}startCond = checkStart(player);
 		}
 		for (Pokemon a : player) {
-			System.out.printf("[Name: %s,     	Element: %s,   	Type: %s,     	Moves: %s]\n",
+			System.out.printf("[Name: %s, Element: %s, Type: %s, Moves: %s]\n",
 					a.getName(), a.getElement(), a.getType(), a.getMoves());
 		}
 	}
