@@ -15,7 +15,7 @@ public class TestGame {
 		Board obj = new Board();
 		
 		Random rand = new Random();
-		int n = rand.nextInt(12);
+	
 		
 		System.out.println("Please enter your name as player 1");
 		String player1name = keyboard.nextLine();
@@ -99,17 +99,22 @@ public class TestGame {
 		stage3.add(null);
 		stage3.add(null);
 		
-		for( int i = 0; i <=6; i++){
+		for( int i = 1; i <=6; i++){
+			int n = rand.nextInt(12);
 			p1.add(stage1.get(n));
+	
 			
 		}
 		
-		for( int i = 0; i <=6; i++){
-			p2.add(stage1.get(n));
+		System.out.println(p1);
+		
+		for( int i = 1; i <=6; i++){
+			int y = rand.nextInt(12);
+			p2.add(stage1.get(y));
 			
 		}
 		
-		
+	
 		
 //		for ( Pokemon a: cardNumber ) {
 //			System.out.println("=====================");
