@@ -7,6 +7,9 @@ public class Board extends Turn{
 	private String player2name;
 	public void startDraw() {
 		System.out.println("Each player draw 6 card");
+		ArrayList<Pokemon>random = new ArrayList<Pokemon>();
+		ArrayList<player1>playerone = new ArrayList<player1>();
+		ArrayList<player2>playertwo = new ArrayList<player2>();
 		
 	}
 

@@ -2,7 +2,7 @@
 import javax.swing.JFrame; 
 import javax.swing.JScrollPane; 
 import javax.swing.JTable; 
-  
+import java.util.ArrayList;
 public class player1 { 
     // frame 
     JFrame f; 
@@ -20,10 +20,11 @@ public class player1 {
   
         // Data to be displayed in the JTable 
         String[][] data = { 
-           
+                
         }; 
   
         // Column Names 
+        
         String[] columnNames = { "Number", "HP", "Stage","Energy","Experience","Element","Type","Status","Hit Point" }; 
   
         // Initializing the JTable 
