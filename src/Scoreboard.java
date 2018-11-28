@@ -1,14 +1,19 @@
 import java.util.ArrayList;
 import java.util.List;
-
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 public class Scoreboard {
 
 	private String num1 ;
 	private int steps;
-	List<String>top10 = new ArrayList<>(10);
-	List<Integer>total_step = new ArrayList<>(10);
-	
+	ArrayList<String>top10 = new ArrayList<>(10);
+	ArrayList<Integer>total_step = new ArrayList<>(10);
+	final String FNAME = "record.txt";
    
+	
+
+	
 	
 	public Scoreboard(String num1,int steps){
 		for (int x=0; x<=top10.size(); x++) {
@@ -61,7 +66,7 @@ public class Scoreboard {
 
 
 
-	public void setTop10(List<String> top10) {
+	public void setTop10(ArrayList<String> top10) {
 		this.top10 = top10;
 	}
 
@@ -73,9 +78,30 @@ public class Scoreboard {
 
 
 
-	public void setTotal_step(List<Integer> total_step) {
+	public void setTotal_step(ArrayList<Integer> total_step) {
+		
 		this.total_step = total_step;
 	}
-}	
-
+	
+	{
+	try   ( BufferedWriter bw = 
+			new BufferedWriter (new FileWriter (FNAME)) ) 
+	{			
+		
+		for (String line : top10) {
+			bw.write (line );
+		
+		for (Integer line2 : total_step) {
+			bw.write (line2 + "\n");
+		}
+		}
+		bw.close ();
+		
+	} catch (IOException e) {
+		e.printStackTrace ();
+	}
+	}
+	
+	
+}
 
