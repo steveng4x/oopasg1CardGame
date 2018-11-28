@@ -12,6 +12,7 @@ public class Pokemon extends Board{
 	private String status;
 	private int attackingPoints;
 	private int resistancePoints;
+	private int staticTimer;
 	
 	//Constructor
 	/**
@@ -33,7 +34,7 @@ public class Pokemon extends Board{
 		setName(name);
 		setHp(hp);
 		setStage(stage);
-		setStage(energy);
+		setEnergy(energy);
 		setExp(exp);
 		setElement(element);
 		setType(type);
@@ -46,6 +47,7 @@ public class Pokemon extends Board{
 			setAttackingPoints(1);
 			setResistancePoints(atkordef);
 		}
+		setStaticTimer(0);
 	}//Attacking/Defending
 	
 	public Pokemon(String name,int hp, int stage,int energy,
@@ -53,7 +55,7 @@ public class Pokemon extends Board{
 		setName(name);
 		setHp(hp);
 		setStage(stage);
-		setStage(energy);
+		setEnergy(energy);
 		setExp(exp);
 		setElement(element);
 		setType(type);
@@ -61,6 +63,7 @@ public class Pokemon extends Board{
 		setStatus(status);	
 		setAttackingPoints(1);
 		setResistancePoints(0);
+		setStaticTimer(0);
 	}//Fairy
 	
 	//Setters//Getters
@@ -80,8 +83,7 @@ public class Pokemon extends Board{
 	}
 
 	public void setHp(int hp) {
-			this.hp = hp;
-
+		this.hp = hp;
 	}
 
 	public int getStage() {
@@ -155,7 +157,18 @@ public class Pokemon extends Board{
 	public void setResistancePoints(int resistancePoints) {
 		this.resistancePoints = resistancePoints;
 	}
+	
+	public int getStaticTimer() {
+		return staticTimer;
+	}
+	
+	public void setStaticTimer(int turn) {
+		this.staticTimer = turn;
+	}
 
+	public void decreaseStaticTimer() {
+		staticTimer -= 1;
+	}
 	//toString
 	@Override
 	public String toString() {
@@ -165,6 +178,21 @@ public class Pokemon extends Board{
 				+ getType() + ", Moves = " + getMoves() + ", Status = "
 				+ getStatus() + ", Attack = " + getAttackingPoints()
 				+ ", Resist = " + getResistancePoints();
+	}
+	
+	public Object[] toObjectArray() {
+        return new Object[]{
+            getName(),
+            getHp(),
+            getStage(),
+            getEnergy(),
+            getExp(),
+            getElement(),
+            getType(),
+            getStatus(),
+            getAttackingPoints(),
+            getResistancePoints()
+        };
 	}
 	
 	//otherMethod
@@ -193,6 +221,6 @@ public class Pokemon extends Board{
 	}
 	
 	public void evolve() {
-		
+		setStage(getStage() + 1);
 	}
 }
