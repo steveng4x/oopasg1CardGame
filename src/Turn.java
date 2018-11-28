@@ -48,14 +48,13 @@ public class Turn {
 					int targetPoke = keyboard.nextInt();
 					Pokemon y = outPlayer.get(targetPoke);
 					optionAttack(x, y);
-					expCheck(x);
 				case 2:
 					optionRecharge(x);
 					
 				case 3:
 					optionTrain(x);
-					expCheck(x);
 				}
+				expCheck(x);
 			}else {
 				throw new ArithmeticException("Out of Option Range.");
 			}
@@ -93,11 +92,24 @@ public class Turn {
 	}
 	
 	public void optionRecharge(Pokemon Poke) {
-		
+		List<String> givenList = Arrays.asList("red","blue","yellow","colourless");
+		Random rand = new Random();
+	    String randomElement = givenList.get(rand.nextInt(givenList.size()));
+	    System.out.println("EnergyElement Drawn: " + randomElement);;
+	    if (randomElement == Poke.getElement()) {
+	    	System.out.println("Color Matched!!!!");
+	    	System.out.println("Energy for " + Poke.getName() + " is increase by 5.");
+	    	Poke.increaseEnergy(5);
+	    }else {
+	    	System.out.println("Color not Matched....");
+	    }
 	}
 	
 	public void optionTrain(Pokemon Poke) {
-		
+		System.out.println(Poke.getName() + " is being Trained.....");
+		Poke.increaseExp(5);
+		Poke.decreaseEnergy(5);
+		System.out.println("Energy for " + Poke.getName() + "is decrease by 5.");
 	}
 	
 	public boolean weaknessCheck(Pokemon poke1, Pokemon poke2) {
@@ -158,17 +170,6 @@ public class Turn {
 	    }
 	}
 	
-	public void energydrawCheck() {
-		List<String> givenList = Arrays.asList("red","blue","yellow","colourless");
-		 Random rand = new Random();
-		    String randomElement = givenList.get(rand.nextInt(givenList.size()));
-		/**if (randomElement==element) {
-			System.out.println(randomElement + "" + "Colour Matched");
-	
-		}**/
-		
-	}
-	
 	public void expCheck(Pokemon poke) {
 		if (poke.getExp() >= 20) {
 			poke.resetExp();
@@ -176,13 +177,13 @@ public class Turn {
 		}
 	}
 	
-	public void changeCard() {
-		
-	}
-	
 	public void statusCheck() {
 		
 	}
+	
+//	public void changeCard() {
+//		
+//	}
 	
 	
 }
